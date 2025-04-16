@@ -1,12 +1,12 @@
-import { Title } from '../../dto/title';
-import { IdValueObject } from '../../value-object/id.value-object';
+import type { Title } from "../../dto/title";
+import type { IdValueObject } from "../../value-object/id.value-object";
 
 export type BaseTitleGatewayGetInput = {
-  imdbId: IdValueObject;
+	imdbId: IdValueObject;
 };
 
 export interface BaseTitleGateway {
-  get(input: BaseTitleGatewayGetInput): Promise<Title | null>;
+	get(input: BaseTitleGatewayGetInput): Promise<Title | null>;
 }
 
-export const BaseTitleGateway = Symbol.for('BaseTitleGateway');
+export const BaseTitleGateway = Symbol.for("BaseTitleGateway");

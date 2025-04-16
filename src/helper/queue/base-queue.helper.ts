@@ -1,5 +1,5 @@
 export interface BaseQueueHelper {
-  add(name: string, data: unknown): Promise<void>;
+	add(name: string, data: unknown): Promise<void>;
 }
 
-export const BaseQueueHelper = Symbol.for('BaseQueueHelper');
+export const BaseQueueHelper = Symbol.for("BaseQueueHelper");

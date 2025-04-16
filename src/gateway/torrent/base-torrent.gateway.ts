@@ -1,23 +1,26 @@
-import type { Torrent } from '../../dto/torrent';
-import { IdValueObject } from '../../value-object/id.value-object';
+import type { Torrent } from "../../dto/torrent";
+import type { IdValueObject } from "../../value-object/id.value-object";
 
 export type BaseTorrentGatewayUpdateOptions = {
-  upsert?: boolean;
+	upsert?: boolean;
 };
 
 export type BaseTorrentGatewayGetInput = {
-  infoHash: string;
+	infoHash: string;
 };
 
 export type BaseTorrentGatewayListInput = {
-  imdbId?: IdValueObject;
-  infoHash?: string;
+	imdbId?: IdValueObject;
+	infoHash?: string;
 };
 
 export interface BaseTorrentGateway {
-  get(input: BaseTorrentGatewayGetInput): Promise<Torrent>;
-  update(torrent: Torrent, options?: BaseTorrentGatewayUpdateOptions): Promise<void>;
-  list(input: BaseTorrentGatewayListInput): Promise<Torrent[]>;
+	get(input: BaseTorrentGatewayGetInput): Promise<Torrent>;
+	update(
+		torrent: Torrent,
+		options?: BaseTorrentGatewayUpdateOptions,
+	): Promise<void>;
+	list(input: BaseTorrentGatewayListInput): Promise<Torrent[]>;
 }
 
-export const BaseTorrentGateway = Symbol('BaseTorrentGateway');
+export const BaseTorrentGateway = Symbol("BaseTorrentGateway");
